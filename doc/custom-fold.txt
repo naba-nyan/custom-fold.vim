@@ -1,0 +1,8 @@
+1. License                                                *custom-fold-license*
+
+This plugin is licensed under the MIT license.
+
+===============================================================================
+2. Changelog                                           *custom-fold-change-log*
+
+vim: ft=help

@@ -1,0 +1,34 @@
+*markdown-fold.txt* Plug in to fold LaTeX documents
+
+Author: INABA Shota <github.com/naba-nyan>
+
+===============================================================================
+Contents                                                 *markdown-fold-contents*
+
+  1. Usage..................................|markdown-fold-usage|
+  2. Options................................|markdown-fold-options|
+
+===============================================================================
+1. Usage                                                    *markdown-fold-usage*
+
+The markdown-fold plugin provides a custom |foldexpr| function using regular
+expressions to fold markdown documents. When it is enabled,
+it will fold section block based on heading depth and multiple line comments.
+Also if specified, it will fold fenced code blocks.
+
+===============================================================================
+2. Options                                                *markdown-fold-options*
+
+Use these options to customize tex-fold:
+
+                                              *g:markdown_fold_override_foldtext*
+Use markdown-fold own foldtext function instead of the builtin one: >
+  let g:markdown_fold_override_foldtext = 1
+<
+                                                    *g:markdown_fold_fenced_code*
+By default, markdown-fold does not fold fenced code blocks.
+You can specify wheter to fold fenced code blocks or not: >
+  let g:markdown_fold_fenced_code = 0
+<
+
+vim: ft=help

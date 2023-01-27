@@ -1,0 +1,50 @@
+*tex-fold.txt* Plug in to fold LaTeX documents
+
+Author: INABA Shota <github.com/naba-nyan>
+
+===============================================================================
+Contents                                                    *tex-fold-contents*
+
+  1. Usage..................................|tex-fold-usage|
+  2. Options................................|tex-fold-options|
+
+===============================================================================
+1. Usage                                                       *tex-fold-usage*
+
+The tex-fold plugin provides a custom |foldexpr| function using regular
+expressions to fold LaTeX documents. When it is enabled,
+it will fold sections and environments defined with begin and end.
+Also if specified, it will fold based on |foldmaker|.
+
+===============================================================================
+2. Options                                                   *tex-fold-options*
+
+Use these options to customize tex-fold:
+
+                                                 *g:tex_fold_override_foldtext*
+Use tex-folds own foldtext function instead of the builtin one: >
+  let g:tex_fold_override_foldtext = 1
+<
+                                                          *g:tex_fold_sec_char*
+Set the string to prepend the foldtext for sections: >
+  let g:tex_fold_sec_char = '§'
+<
+                                                          *g:tex_fold_env_char*
+Set the string to prepend the foldtext for environments: >
+  let g:tex_fold_env_char = '❯'
+<
+                                                      *g:tex_fold_allow_marker*
+Besides folding sections and environments, allow vim to fold by fold markers.
+This feature is disable by default: >
+  let g:tex_fold_allow_marker = 0
+<
+                                                            *g:tex_fold_marker*
+Set the custom fold markers as a list: >
+  let g:tex_fold_marker = ['{{{','}}}']
+<
+                                                              *g:tex_fold_envs*
+By default, tex-fold does not fold any blocks between \begin and \end.
+You can specify the list of environmets which you want to fold: >
+  let g:tex_fold_envs = []
+<
+vim: ft=help
