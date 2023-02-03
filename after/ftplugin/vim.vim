@@ -67,8 +67,9 @@ function! VimFoldText () abort
 
   " return foldtext:
   let fold_line_count = v:foldend - v:foldstart + 1
-  let fold_text_header = printf("%d-%-3d", foldlevel(v:foldstart), fold_line_count) . ' '
-  let fold_text = fold_text_header . repl
+  let fold_text_header = repeat('-', foldlevel(v:foldstart)) . ' '
+  let fold_text_footer = fold_line_count . ' lines:'
+  let fold_text = fold_text_header . repl . fold_text_footer
 
   return fold_text
 
